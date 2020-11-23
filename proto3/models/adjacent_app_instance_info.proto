@@ -18,14 +18,14 @@ import public "models/mec_host_information.proto";
 message AdjacentAppInstanceInfo {
 
   // Identifier of the application descriptor.
-  string appDId = 1;
+  string appd_id = 1;
 
   // It specifies the communication interface of application instance.
-  repeated CommunicationInterface appInstanceCommLink = 2;
+  repeated CommunicationInterface app_instance_comm_link = 2;
 
   // Identifier of the application instance.
-  string appInstanceId = 3;
+  string app_instance_id = 3;
 
-  MECHostInformation mecHostInformation = 4;
+  MECHostInformation mec_host_information = 4;
 
 }

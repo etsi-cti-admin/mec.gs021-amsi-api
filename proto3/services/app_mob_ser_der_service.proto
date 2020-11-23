@@ -21,7 +21,7 @@ service AppMobSerDerService {
 }
 
 message AppMobilityServiceDerPOSTRequest {
-  string appMobilityServiceId = 1;
+  string app_mobility_service_id = 1;
 
 }
 

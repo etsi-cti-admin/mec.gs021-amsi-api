@@ -15,9 +15,9 @@ package mec021;
 //Numeric value (0 - 255) corresponding to specified type of subscription as following: 0 = RESERVED. 1 = MOBILITY_PROCEDURE. 2 = ADJACENT_APPINFO.
 message SubscriptionType{
 enum TypeEnum {
-		_0 = 0;
-		_1 = 1;
-		_2 = 2;
+		SUBSCRIPTION_TYPE_TYPE_ENUM_0 = 0;
+		SUBSCRIPTION_TYPE_TYPE_ENUM_1 = 1;
+		SUBSCRIPTION_TYPE_TYPE_ENUM_2 = 2;
 	}
 
   TypeEnum type = 1;

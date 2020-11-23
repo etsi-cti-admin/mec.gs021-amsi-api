@@ -16,9 +16,9 @@ package mec021;
 message RegistrationInfoServiceConsumerId {
 
   // If present, it represents the identifier of the application instance registering the application mobility service.
-  string appInstanceId = 1;
+  string app_instance_id = 1;
 
   // If present, it represents the identifier of the MEC platform registering the application mobility service.
-  string mepId = 2;
+  string mep_id = 2;
 
 }

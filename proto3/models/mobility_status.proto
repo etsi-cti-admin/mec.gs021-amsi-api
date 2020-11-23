@@ -15,9 +15,9 @@ package mec021;
 //In case mobilityStatus is not included in the subscription request, the default value 1 = INTER_HOST_MOBILITY_TRIGGERED shall be used and included in the response. 1 = INTERHOST_MOVEOUT_TRIGGERED. 2 = INTERHOST_MOVEOUT_COMPLETED. 3 = INTERHOST_MOVEOUT_FAILED.
 message MobilityStatus{
 	enum TypeEnum {
-		_1 = 0;
-		_2 = 1;
-		_3 = 2;
+		MOBILITY_STATUS_TYPE_ENUM_1 = 0;
+		MOBILITY_STATUS_TYPE_ENUM_2 = 1;
+		MOBILITY_STATUS_TYPE_ENUM_3 = 2;
 	}
   TypeEnum type = 1;
 

@@ -31,23 +31,23 @@ service SubscriptionsService {
 }
 
 message SubByIdDELETERequest {
-  string subscriptionId = 1;
+  string subscription_id = 1;
 
 }
 
 message SubByIdGETRequest {
-  string subscriptionId = 1;
+  string subscription_id = 1;
 
 }
 
 message SubByIdPUTRequest {
-  string subscriptionId = 1;
+  string subscription_id = 1;
   Subscription subscription = 2;
 
 }
 
 message SubGETRequest {
-  string subscriptionType = 1;
+  string subscription_type = 1;
 
 }
 

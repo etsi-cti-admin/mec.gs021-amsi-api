@@ -15,6 +15,6 @@ package mec021;
 
 message AdjacentAppInfoSubscriptionFilterCriteria {
 
-  string appInstanceId = 1;
+  string app_instance_id = 1;
 
 }

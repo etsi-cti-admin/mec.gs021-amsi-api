@@ -25,13 +25,13 @@ message AdjAppInstGETRequest {
   // Attribute-based filtering parameters according to ETSI GS MEC 011
   string filter = 1;
   // Include all complex attributes in the response.
-  string allFields = 2;
+  string all_fields = 2;
   // Complex attributes to be included into the response. See clause 6.18 in ETSI GS MEC 011
   string fields = 3;
   // Complex attributes to be excluded from the response.See clause 6.18 in ETSI GS MEC 011
-  string excludeFields = 4;
+  string exclude_fields = 4;
   // Indicates to exclude the following complex attributes from the response  See clause 6.18 in ETSI GS MEC 011 for details.
-  string excludeDefault = 5;
+  string exclude_default = 5;
 
 }
 

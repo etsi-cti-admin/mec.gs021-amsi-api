@@ -16,8 +16,8 @@ package mec021;
 
 message ContextTransferState{
 enum TypeEnum {
-	_0 = 0;
-	_1 = 1;
+	CONTEXT_TRANSFER_STATE_TYPE_ENUM_0 = 0;
+	CONTEXT_TRANSFER_STATE_TYPE_ENUM_1 = 1;
 	}
 
   TypeEnum type = 1;

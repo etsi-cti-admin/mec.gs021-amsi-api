@@ -17,7 +17,7 @@ import public "models/adjacent_app_info_subscription.proto";
 
 message Subscription {
   oneof subscription {
-    MobilityProcedureSubscription mobilityProcedureSubscription = 1;
-    AdjacentAppInfoSubscription adjacentAppInfoSubscription = 2;
+    MobilityProcedureSubscription mobility_procedure_subscription = 1;
+    AdjacentAppInfoSubscription adjacent_app_info_subscription = 2;
   }
 }

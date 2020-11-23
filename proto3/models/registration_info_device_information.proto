@@ -18,10 +18,10 @@ import public "models/context_transfer_state.proto";
 
 message RegistrationInfoDeviceInformation {
 
-  AssociateId associateId = 1;
+  AssociateId associate_id = 1;
 
-  AppMobilityServiceLevel appMobilityServiceLevel = 2;
+  AppMobilityServiceLevel app_mobility_service_level = 2;
 
-  ContextTransferState contextTransferState = 3;
+  ContextTransferState context_transfer_state = 3;
 
 }

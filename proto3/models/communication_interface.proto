@@ -16,6 +16,6 @@ import public "models/communication_interface_ip_addresses.proto";
 
 message CommunicationInterface {
 
-  repeated CommunicationInterfaceIpAddresses ipAddresses = 1;
+  repeated CommunicationInterfaceIpAddresses ip_addresses = 1;
 
 }

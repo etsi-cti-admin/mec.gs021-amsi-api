@@ -19,6 +19,6 @@ message TimeStamp {
   int32 seconds = 1;
 
   // 'The nanoseconds part of the Time. Time is defined as Unix-time since January 1, 1970, 00:00:00 UTC.'
-  int32 nanoSeconds = 2;
+  int32 nano_seconds = 2;
 
 }

@@ -19,6 +19,6 @@ message SubscriptionLinkListSubscription {
   // The URI referring to the subscription.
   string href = 1;
 
-  SubscriptionType subscriptionType = 2;
+  SubscriptionType subscription_type = 2;
 
 }

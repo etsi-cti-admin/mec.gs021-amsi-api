@@ -18,14 +18,14 @@ import public "models/registration_info_service_consumer_id.proto";
 message RegistrationInfo {
 
   // The identifier of registered application mobility service. Shall be absent in POST requests, and present otherwise.
-  string appMobilityServiceId = 1;
+  string app_mobility_service_id = 1;
 
   // If present, it specifies the device served by the application instance which is registering the application mobility service.
-  repeated RegistrationInfoDeviceInformation deviceInformation = 2;
+  repeated RegistrationInfoDeviceInformation device_information = 2;
 
   // If present, it indicates the time of application mobility service expiration from the time of registration accepted.The value \"0\" means infinite time, i.e. no expiration.The unit of expiry time is one second.
-  int32 expiryTime = 3;
+  int32 expiry_time = 3;
 
-  RegistrationInfoServiceConsumerId serviceConsumerId = 4;
+  RegistrationInfoServiceConsumerId service_consumer_id = 4;
 
 }
