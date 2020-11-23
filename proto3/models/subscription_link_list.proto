@@ -17,7 +17,7 @@ import public "models/subscription_link_list_subscription.proto";
 
 message SubscriptionLinkList {
 
-  SubscriptionLinkListLinks Underscorelinks = 1;
+  SubscriptionLinkListLinks underscorelinks = 1;
 
   // A link to a subscription.
   repeated SubscriptionLinkListSubscription subscription = 2;
