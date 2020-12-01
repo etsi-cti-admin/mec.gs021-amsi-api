@@ -8,6 +8,8 @@
       "url": "https://forge.etsi.org/legal-matters"
     },
     "contact": {
+      "name": "ETSI Forge",
+      "email": "cti_support@etsi.org",
       "url": "https://forge.etsi.org/rep/mec/gs021-amsi-api"
     }
   },

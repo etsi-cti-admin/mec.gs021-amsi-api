@@ -6,6 +6,8 @@ info:
     name: BSD-3-Clause
     url: 'https://forge.etsi.org/legal-matters'  
   contact:
+    name: ETSI Forge
+    email: cti_support@etsi.org
     url: https://forge.etsi.org/rep/mec/gs021-amsi-api
 externalDocs:
   description: "ETSI GS MEC 021 Application Mobility Service API, v2.1.1"
