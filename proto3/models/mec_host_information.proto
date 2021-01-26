@@ -13,6 +13,8 @@ syntax = "proto3";
 package mec021;
 import "google/protobuf/any.proto";
 
+option java_outer_classname = "MECHostInformationProto";
+
 message MECHostInformation {
 
   // Human-readable name of MEC host.

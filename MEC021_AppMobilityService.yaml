@@ -304,6 +304,26 @@ paths:
           $ref: '#/components/responses/422'           
         '429':
           $ref: '#/components/responses/429'
+      callbacks:
+        notification:
+          '{$request.body#/callbackReference}':
+            post:
+              summary: 'Callback POST used to send a notification'
+              description: 'Notification from AMS with regards to adjacent application instances information or with regards mobility procedure.'
+              operationId: notificationPOST
+              requestBody:
+                description: Subscription notification
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      oneOf:
+                      - $ref: '#/components/schemas/MobilityProcedureNotification'
+                      - $ref: '#/components/schemas/AdjacentAppInfoNotification'        
+              responses:
+                '204':
+                  $ref: '#/components/responses/204'
+
 
  /subscriptions/{subscriptionId}:
    parameters:
@@ -853,7 +873,127 @@ components:
         hostId:
           $ref: '#/components/schemas/KeyValuePairs'   
           
-
+    ExpiryNotification:
+      properties:
+        _links:
+          description: List of hyperlinks related to the resource.
+          properties:
+            self:
+              description: Self referring URI. This shall be included in the response from the AMS. The URI shall be unique within the AMS API as it acts as an ID for the subscription.
+              format: uri
+              type: string
+              x-etsi-mec-cardinality: '1'
+              x-etsi-mec-origin-type: URI
+          required:
+          - self
+          type: object
+          x-etsi-mec-cardinality: '1'
+          x-etsi-mec-origin-type: Structure (inlined)
+        expiryDeadline:
+          '# description': Time stamp.
+          '# x-etsi-mec-cardinality': '1'
+          '# x-etsi-mec-origin-type': TimeStamp
+          $ref: '#/components/schemas/TimeStamp'
+        timeStamp:
+          '# description': Time stamp.
+          '# x-etsi-mec-cardinality': 0..1
+          '# x-etsi-mec-origin-type': TimeStamp
+          $ref: '#/components/schemas/TimeStamp'
+      required:
+      - _links
+      - expiryDeadline
+      type: object
+      x-etsi-ref: 7.4.4
+    LocalityTypes:
+      type: string
+    MobilityProcedureNotification:
+      properties:
+        associateId:
+          description: 0 to N identifiers to associate the information for specific UE(s) and flow(s).
+          items:
+            $ref: '#/components/schemas/AssociateId'
+          minItems: 0
+          type: array
+          x-etsi-mec-cardinality: 0..N
+          x-etsi-mec-origin-type: AssociateId
+        mobilityStatus:
+          description: 'Indicate the status of the UE mobility. Values are defined as following:      1 = INTERHOST_MOVEOUT_TRIGGERED.      2 = INTERHOST_MOVEOUT_COMPLETED.      3 = INTERHOST_MOVEOUT_FAILED.       Other values are reserved.'
+          enum:
+          - 1
+          - 2
+          - 3
+          type: integer
+          x-etsi-mec-cardinality: '1'
+        notificationType:
+          description: 'Shall be set to \"MobilityProcedureNotification\".'
+          type: string
+          x-etsi-mec-cardinality: '1'
+          x-etsi-mec-origin-type: String
+        targetAppInfo:
+          description: Identifiers to associate the information of target application instance.
+          properties:
+            appInstanceId:
+              description: Identifiers of the target application instance.
+              type: string
+              x-etsi-mec-cardinality: 0..1
+              x-etsi-mec-origin-type: String
+            commInterface:
+              '# description': If present, it specifies the communication interface of the application instance.
+              '# x-etsi-mec-cardinality': 0..1
+              '# x-etsi-mec-origin-type': CommunicationInterface
+              $ref: '#/components/schemas/CommunicationInterface'
+          type: object
+          x-etsi-mec-cardinality: 0..1
+          x-etsi-mec-origin-type: Structure (inlined)
+        timeStamp:
+          '# description': Time stamp.
+          '# x-etsi-mec-cardinality': 0..1
+          '# x-etsi-mec-origin-type': TimeStamp
+          $ref: '#/components/schemas/TimeStamp'
+      required:
+      - notificationType
+      - mobilityStatus
+      type: object
+      x-etsi-ref: 7.4.2
+    
+    AdjacentAppInfoNotification:
+      properties:
+        notificationType:
+          description: 'Shall be set to \"AdjacentAppInfoNotification\".'
+          type: string
+          x-etsi-mec-cardinality: '1'
+          x-etsi-mec-origin-type: String
+        adjacentAppInfo:
+          description: Identifiers to associate the information of target application instance.
+          properties:
+            appInstanceId:
+              description: Identifiers of the target application instance.
+              type: string
+              x-etsi-mec-cardinality: 0..1
+              x-etsi-mec-origin-type: String
+             
+            commInterface:
+              '# description': If present, it specifies the communication interface of the application instance.
+              '# x-etsi-mec-cardinality': 0..1
+              '# x-etsi-mec-origin-type': CommunicationInterface
+              $ref: '#/components/schemas/CommunicationInterface'
+          type: object
+          x-etsi-mec-cardinality: 0..1
+          required:
+              - appInstanceId
+        timeStamp:
+          '# description': Time stamp.
+          '# x-etsi-mec-cardinality': 0..1
+          '# x-etsi-mec-origin-type': TimeStamp
+          $ref: '#/components/schemas/TimeStamp'
+      required:
+      - notificationType
+      - mobilityStatus
+      type: object
+      x-etsi-ref: 7.4.2    
+    
+    
+      
     
     ProblemDetails:
       properties:
